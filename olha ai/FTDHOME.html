@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ONG Futsal sem Drogas - Transformando vidas através do esporte, prevenção às drogas e desenvolvimento social">
+    <title>Futsal sem Drogas - Transformando Vidas Através do Esporte</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variáveis CSS para cores e estilos principais */
+        :root {
+            --primary-color: #FF5500;
+            --primary-dark: #E64A00;
+            --secondary-color: #000;
+            --text-color: #000000;
+            --light-gray: #f9f9f9;
+            --white: #fff;
+            --dark-gray: #222;
+            --medium-gray: #666;
+            --light-text: #999;
+        }
+        
+        /* Estilos gerais do corpo */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Estilos para títulos */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Botão primário */
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover, .btn-primary:focus {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+        
+        .btn-outline-light:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Estilos de seção */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 15px auto 0;
+        }
+        
+        /* Header */
+        .navbar-brand {
+            font-size: 30px;
+            font-weight: 800;
+        }
+        
+        .navbar-brand span {
+            color: var(--primary-color);
+        }
+        
+        .navbar-brand img {
+            height: 80px;
+            margin-right: 10px;
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .navbar-nav .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover:after, .navbar-nav .nav-link:focus:after {
+            width: 100%;
+        }
+        
+        .whatsapp-number i {
+            color: #25D366;
+            margin-right: 5px;
+            font-size: 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            background-color: var(--secondary-color);
+            margin-top: 80px;
+        }
+        
+        .carousel-item {
+            height: 100vh;
+            min-height: 600px;
+        }
+        
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8));
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--white);
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            font-size: 24px;
+            animation: bounce 2s infinite;
+            z-index: 2;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* Impact Numbers */
+        .impact {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 0;
+        }
+        
+        .impact-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .impact-number {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .impact-text {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .impact-description {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        /* About Section */
+        .about-title span {
+            color: var(--primary-color);
+        }
+        
+        .about-subtitle {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .about-video {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .video-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .video-play:hover, .video-play:focus {
+            transform: translate(-50%, -50%) scale(1.1);
+            background-color: var(--primary-dark);
+        }
+        
+        .video-play i {
+            color: var(--white);
+            font-size: 30px;
+            margin-left: 5px;
+        }
+        
+        /* Projects Section */
+        .projects {
+            background-color: var(--light-gray);
+        }
+        
+        .project-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 100%;
+        }
+        
+        .project-card:hover, .project-card:focus-within {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .project-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .project-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .project-icon i {
+            color: var(--white);
+            font-size: 24px;
+        }
+        
+        .project-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .project-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-link:hover i, .project-link:focus i {
+            transform: translateX(5px);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--dark-gray);
+            color: var(--white);
+        }
+        
+        .testimonial-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--primary-color);
+        }
+        
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-quote {
+            font-size: 18px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quote-mark {
+            position: absolute;
+            font-size: 120px;
+            color: rgba(255,85,0,0.2);
+            top: -40px;
+            left: -20px;
+            z-index: 0;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .testimonial-role {
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+        
+        /* Help Section */
+        .help {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .help-card {
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 100%;
+        }
+        
+        .help-card:hover, .help-card:focus-within {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+        
+        .help-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .help-impact {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .help-btn {
+            background-color: var(--white);
+            color: var(--primary-color);
+            border: none;
+        }
+        
+        .help-btn:hover, .help-btn:focus {
+            background-color: #f0f0f0;
+        }
+        
+        /* News Section */
+        .news-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .news-card:hover, .news-card:focus-within {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .news-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .news-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .tag-event {
+            background-color: #4CAF50;
+            color: var(--white);
+        }
+        
+        .tag-achievement {
+            background-color: #2196F3;
+            color: var(--white);
+        }
+        
+        .tag-news {
+            background-color: #FF9800;
+            color: var(--white);
+        }
+        
+        .news-meta {
+            font-size: 14px;
+            color: #888;
+        }
+        
+        .news-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .news-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .news-link:hover i, .news-link:focus i {
+            transform: translateX(5px);
+        }
+        
+        /* Partners Section */
+        .partners {
+            background-color: var(--light-gray);
+        }
+        
+        .partner-logo {
+            height: 80px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        .partners-benefits {
+            font-size: 14px;
+            color: var(--medium-gray);
+        }
+        
+        /* Donation Widget */
+        .donation {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        
+        .donation-title span {
+            color: var(--primary-color);
+        }
+        
+        .donation-impact {
+            background-color: rgba(255,85,0,0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .donation-option {
+            padding: 15px;
+            background-color: rgba(238, 230, 230, 0.918);
+            border: 2px solid transparent;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--secondary-color);
+        }
+        
+        .donation-option:hover, .donation-option.active, .donation-option:focus {
+            background-color: rgba(255,85,0,0.2);
+            border-color: var(--primary-color);
+        }
+        
+        .donation-option-amount {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .donation-option-impact {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .donation-custom input {
+            border: 2px solid rgba(255, 255, 255, 0.737);
+            background-color: rgba(255, 255, 255, 0.444);
+            color: var(--white);
+        }
+        
+        .donation-custom input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .donation-recurring-badge {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 50px;
+            margin-left: 10px;
+        }
+        
+        .donation-submit {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+        }
+        
+        .donation-submit:hover, .donation-submit:focus {
+            background-color: var(--primary-dark);
+        }
+        
+        .donation-qrcode {
+            width: 150px;
+            height: 150px;
+            background-color: var(--white);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        
+        .donation-qrcode img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Newsletter Section */
+        .newsletter {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 50px 0;
+        }
+        
+        .newsletter-input button {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border: none;
+        }
+        
+        .newsletter-input button:hover, .newsletter-input button:focus {
+            background-color: #333;
+        }
+        
+        .newsletter-privacy {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+        }
+        
+        .footer-heading {
+            color: var(--white);
+            position: relative;
+        }
+        
+        .footer-heading:after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin-top: 10px;
+        }
+        
+        .footer-contact-icon {
+            color: var(--primary-color);
+            font-size: 18px;
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        .footer-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover, .footer-links a:focus {
+            color: var(--primary-color);
+        }
+        
+        .footer-social a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover, .footer-social a:focus {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-certificate {
+            height: 50px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-certificate:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+        }
+        
+        .footer-copyright a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .footer-legal a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-legal a:hover, .footer-legal a:focus {
+            color: var(--primary-color);
+        }
+        
+        /* Floating Elements */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+        }
+        
+        .floating-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .floating-button:hover, .floating-button:focus {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        
+        .floating-whatsapp {
+            background-color: #25D366;
+            color: var(--white);
+            font-size: 24px;
+        }
+        
+        .floating-donate {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-size: 24px;
+        }
+        
+        .donation-counter {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: rgba(0,0,0,0.8);
+            color: var(--white);
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            animation: pulse 2s infinite;
+        }
+        
+        .donation-counter i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255,85,0,0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255,85,0,0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255,85,0,0);
+            }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+            
+            .testimonial-image {
+                margin: 0 auto 20px;
+            }
+            
+            .quote-mark {
+                display: none;
+            }
+            
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-button {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .donation-counter {
+                bottom: 20px;
+                left: 20px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <!-- Logo da ONG -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="logofsd.png" alt="Futsal sem Drogas">
+                    <span>FUTSAL SEM DROGAS</span>
+                </a>
+                
+                <!-- Botão de menu para dispositivos móveis -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Menu de navegação -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Sobre Nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">Projetos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#news">Notícias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#help">Como Ajudar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indicadores do carousel -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            
+            <!-- Slides do carousel -->
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active" style="background-image: url('carrosel-ballet.avif')">
+                    <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
+                        <div class="hero-content text-center">
+                            <h1 id="hero-title" class="hero-title">TRANSFORMANDO VIDAS ATRAVES DO <span style="color: #FF5500;">ESPORTE</span></h1>
+                            <p class="hero-subtitle">Prevenção às drogas e desenvolvimento social por meio do futsal</p>
+                            <div class="hero-buttons mt-4">
+                                <a href="#donation" class="btn btn-primary me-3">FAÇA SUA DOAÇÃO</a>
+                                <a href="#about" class="btn btn-outline-light">CONHEÇA NOSSO TRABALHO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="carousel-item" style="background-image: url('carrosel-campeonato.avif')">
+                    <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
+                        <div class="hero-content text-center">
+                            <h1 class="hero-title">EDUCANDO ATRAVÉS DO <span style="color: #FF5500;">ESPORTE</span></h1>
+                            <p class="hero-subtitle">Formando cidadãos através do futsal e valores humanos</p>
+                            <div class="hero-buttons mt-4">
+                                <a href="#donation" class="btn btn-primary me-3">FAÇA SUA DOAÇÃO</a>
+                                <a href="#about" class="btn btn-outline-light">CONHEÇA NOSSO TRABALHO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="carousel-item" style="background-image: url('carrosel-luta.avif')">
+                    <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
+                        <div class="hero-content text-center">
+                            <h1 class="hero-title">CONSTRUINDO UM <span style="color: #FF5500;">FUTURO MELHOR</span></h1>
+                            <p class="hero-subtitle">Juntos podemos transformar realidades através do esporte</p>
+                            <div class="hero-buttons mt-4">
+                                <a href="#donation" class="btn btn-primary me-3">FAÇA SUA DOAÇÃO</a>
+                                <a href="#about" class="btn btn-outline-light">CONHEÇA NOSSO TRABALHO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Controles do carousel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+        
+        <!-- Indicador de rolagem para baixo -->
+        <a href="#about" class="scroll-down" aria-label="Role para baixo">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+    
+    <!-- Impact Numbers -->
+    <section class="impact" aria-labelledby="impact-title">
+        <div class="container">
+            <div class="row text-center">
+                <!-- Item de impacto 1 -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                        </div>
+                        <div class="impact-number">350+</div>
+                        <div class="impact-text">Jovens Beneficiados</div>
+                        <div class="impact-description">Anualmente em nossos programas</div>
+                    </div>
+                </div>
+                
+                <!-- Item de impacto 2 -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="impact-number">12</div>
+                        <div class="impact-text">Comunidades</div>
+                        <div class="impact-description">Impactadas pelo projeto</div>
+                    </div>
+                </div>
+                
+                <!-- Item de impacto 3 -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-trophy" aria-hidden="true"></i>
+                        </div>
+                        <div class="impact-number">15</div>
+                        <div class="impact-text">Títulos Esportivos</div>
+                        <div class="impact-description">Conquistados pelos nossos atletas</div>
+                    </div>
+                </div>
+                
+                <!-- Item de impacto 4 -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="impact-number">8</div>
+                        <div class="impact-text">Anos de História</div>
+                        <div class="impact-description">Transformando vidas desde 2016</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="about section" aria-labelledby="about-title">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="about-content">
+                        <h3 class="about-subtitle">Quem Somos</h3>
+                        <h2 id="about-title" class="about-title">Prevenção e <span>Transformação Social</span></h2>
+                        <p class="about-text">O projeto Futsal sem Drogas nasceu da necessidade de oferecer alternativas saudáveis e construtivas para jovens em situação de vulnerabilidade social. Através do esporte, desenvolvemos valores como disciplina, trabalho em equipe e superação.</p>
+                        <p class="about-text">Nossa metodologia combina treinamento esportivo de qualidade com acompanhamento social, psicológico e educacional, criando um ambiente propício para o desenvolvimento integral dos participantes.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="about-video">
+                        <video alt="Sobre o Futsal sem Drogas" class="img-fluid" controls>
+                            <source src="file.mp4" type="video/mp4">
+                            <button class="video-play" aria-label="Reproduzir vídeo institucional">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </video>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="projects section" aria-labelledby="projects-title">
+        <div class="container">
+            <h2 id="projects-title" class="section-title text-center">Nossos Projetos</h2>
+            
+            <div class="row g-4">
+                <!-- Projeto 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="project-card">
+                        <div class="project-image" style="background-image: url('https://assets-temp.lovart.ai/img/256df167cffe431f8673becbd2fd90bc/faceed19625455dc478ac89b80b4d5d552a2e4e9.png')" role="img" aria-label="Oficinas de Futsal">
+                            <div class="project-icon">
+                                <i class="fas fa-futbol" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="project-content p-4">
+                            <h3 class="project-title">Oficinas de Futsal</h3>
+                            <p class="project-description">Treinamentos regulares para diferentes faixas etárias, com metodologia própria que alia desenvolvimento técnico e formação cidadã.</p>
+                            <a href="#" class="project-link">Saiba mais <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Projeto 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="project-card">
+                        <div class="project-image" style="background-image: url('https://assets-temp.lovart.ai/img/256df167cffe431f8673becbd2fd90bc/03cff4828bed3f862c0d2ab7d2daa7805bad1916.png')" role="img" aria-label="Atendimento Social">
+                            <div class="project-icon">
+                                <i class="fas fa-hands-helping" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="project-content p-4">
+                            <h3 class="project-title">Atendimento Social</h3>
+                            <p class="project-description">Suporte odontológico, distribuição de alimentos e acompanhamento familiar para garantir o bem-estar integral dos participantes.</p>
+                            <a href="#" class="project-link">Saiba mais <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Projeto 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="project-card">
+                        <div class="project-image" style="background-image: url('https://assets-temp.lovart.ai/img/256df167cffe431f8673becbd2fd90bc/d12f355854519917adc7d15373142a117c1962ae.png')" role="img" aria-label="Competições e Eventos">
+                            <div class="project-icon">
+                                <i class="fas fa-medal" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="project-content p-4">
+                            <h3 class="project-title">Competições e Eventos</h3>
+                            <p class="project-description">Participação em torneios e organização de eventos comunitários que promovem integração social e valorizam o talento local.</p>
+                            <a href="#" class="project-link">Saiba mais <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- News Section -->
+    <section id="news" class="news section" aria-labelledby="news-title">
+        <div class="container">
+            <h2 id="news-title" class="section-title text-center">Últimas Notícias</h2>
+            
+            <div class="row g-4">
+                <!-- Notícia 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="news-card">
+                        <div class="news-image" style="background-image: url('https://assets-temp.lovart.ai/img/256df167cffe431f8673becbd2fd90bc/faceed19625455dc478ac89b80b4d5d552a2e4e9.png')" role="img" aria-label="Equipe Sub-18 é campeã estadual de futsal">
+                            <div class="news-tag tag-achievement">Conquista</div>
+                        </div>
+                        <div class="news-content p-4">
+                            <div class="news-meta d-flex justify-content-between mb-3">
+                                <div class="news-date">
+                                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                    15 Set 2023
+                                </div>
+                                <div class="news-read-time">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    3 min de leitura
+                                </div>
+                            </div>
+                            <h3 class="news-title">Equipe Sub-18 é campeã estadual de futsal</h3>
+                            <p class="news-excerpt">Nossos atletas conquistaram o título inédito após uma campanha impecável no campeonato estadual.</p>
+                            <a href="#" class="news-link">Ler mais <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Notícia 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="news-card">
+                        <div class="news-image" style="background-image: url('https://assets-temp.lovart.ai/img/256df167cffe431f8673becbd2fd90bc/03cff4828bed3f862c0d2ab7d2daa7805bad1916.png')" role="img" aria-label="Nova parceria garante atendimento odontológico">
+                            <div class="news-tag tag-news">Notícia</div>
+                        </div>
+                        <div class="news-content p-4">
+                            <div class="news-meta d-flex justify-content-between mb-3">
+                                <div class="news-date">
+                                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                    28 Ago 2023
+                                </div>
+                                <div class="news-read-time">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    4 min de leitura
+                                </div>
+                            </div>
+                            <h3 class="news-title">Nova parceria garante atendimento odontológico</h3>
+                            <p class="news-excerpt">Firmamos parceria com clínica odontológica que oferecerá tratamento gratuito aos participantes do projeto.</p>
+                            <a href="#" class="news-link">Ler mais <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Notícia 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="news-card">
+                        <div class="news-image" style="background-image: url('https://assets-temp.lovart.ai/img/256df167cffe431f8673becbd2fd90bc/d12f355854519917adc7d15373142a117c1962ae.png')" role="img" aria-label="Festival Braseiro contará com participação especial">
+                            <div class="news-tag tag-event">Evento</div>
+                        </div>
+                        <div class="news-content p-4">
+                            <div class="news-meta d-flex justify-content-between mb-3">
+                                <div class="news-date">
+                                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                    10 Ago 2023
+                                </div>
+                                <div class="news-read-time">
+                                    <i class="far fa-clock" aria-hidden="true"></i>
+                                    2 min de leitura
+                                </div>
+                            </div>
+                            <h3 class="news-title">Festival Braseiro contará com participação especial</h3>
+                            <p class="news-excerpt">Nossos atletas farão uma apresentação especial no Festival Braseiro, que acontece no próximo mês.</p>
+                            <a href="#" class="news-link">Ler mais <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-primary">Ver Todas as Notícias</a>
+            </div>
+        </div>
+    </section>
+    <!-- Help Section -->
+    <section id="help" class="help section" aria-labelledby="help-title">
+        <div class="container">
+            <h2 id="help-title" class="section-title text-center">Como Ajudar</h2>
+            
+            <div class="row g-4">
+                <!-- Card de Doação -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="help-card">
+                        <div class="help-icon">
+                            <i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="help-title">Faça uma Doação</h3>
+                        <p class="help-description">Sua contribuição financeira ajuda a manter e expandir nossos projetos, beneficiando mais jovens.</p>
+                        <p class="help-impact">R$50 = Material esportivo para 1 jovem por mês</p>
+                        <a href="#donation" class="btn help-btn">Doar Agora</a>
+                    </article>
+                </div>
+                
+                <!-- Card de Voluntariado -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="help-card">
+                        <div class="help-icon">
+                            <i class="fas fa-user-friends" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="help-title">Seja Voluntário</h3>
+                        <p class="help-description">Compartilhe seu tempo e habilidades conosco. Precisamos de profissionais de diversas áreas.</p>
+                        <p class="help-impact">4h semanais podem transformar vidas</p>
+                        <a href="#" class="btn help-btn">Cadastre-se</a>
+                    </article>
+                </div>
+                
+                <!-- Card de Parceria -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="help-card">
+                        <div class="help-icon">
+                            <i class="fas fa-handshake" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="help-title">Torne-se Parceiro</h3>
+                        <p class="help-description">Empresas e instituições podem apoiar nosso trabalho de diversas formas, com benefícios mútuos.</p>
+                        <p class="help-impact">Responsabilidade social com impacto real</p>
+                        <a href="#" class="btn help-btn">Saiba Mais</a>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Partners Section -->
+    <section class="partners section" aria-labelledby="partners-title">
+        <div class="container">
+            <h2 id="partners-title" class="section-title text-center">Nossos Parceiros</h2>
+            
+            <div class="partners-description text-center mb-5">
+                <p class="mx-auto" style="max-width: 700px;">Contamos com o apoio de empresas e instituições que acreditam no poder transformador do esporte e investem em um futuro melhor para nossa comunidade.</p>
+            </div>
+            
+            <div class="partners-categories mb-5">
+                <div class="partners-category mb-5">
+                    <h3 class="category-title text-center mb-4">Patrocinadores Principais</h3>
+                    <div class="partners-logos d-flex flex-wrap justify-content-center align-items-center gap-4">
+                        <img src="https://via.placeholder.com/150x80/CCCCCC/666666?text=LOGO+1" alt="Patrocinador 1" class="partner-logo">
+                        <img src="https://via.placeholder.com/150x80/CCCCCC/666666?text=LOGO+2" alt="Patrocinador 2" class="partner-logo">
+                        <img src="https://via.placeholder.com/150x80/CCCCCC/666666?text=LOGO+3" alt="Patrocinador 3" class="partner-logo">
+                    </div>
+                </div>
+                
+                <div class="partners-category">
+                    <h3 class="category-title text-center mb-4">Apoiadores</h3>
+                    <div class="partners-logos d-flex flex-wrap justify-content-center align-items-center gap-4">
+                        <img src="https://via.placeholder.com/120x60/CCCCCC/666666?text=LOGO+4" alt="Apoiador 1" class="partner-logo">
+                        <img src="https://via.placeholder.com/120x60/CCCCCC/666666?text=LOGO+5" alt="Apoiador 2" class="partner-logo">
+                        <img src="https://via.placeholder.com/120x60/CCCCCC/666666?text=LOGO+6" alt="Apoiador 3" class="partner-logo">
+                        <img src="https://via.placeholder.com/120x60/CCCCCC/666666?text=LOGO+7" alt="Apoiador 4" class="partner-logo">
+                        <img src="https://via.placeholder.com/120x60/CCCCCC/666666?text=LOGO+8" alt="Apoiador 5" class="partner-logo">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="partners-cta text-center">
+                <a href="#" class="btn btn-primary">Seja um Parceiro</a>
+                <p class="partners-benefits mt-3">Visibilidade para sua marca + Impacto social positivo + Benefícios fiscais</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Donation Widget -->
+    <section id="donation" class="donation section" aria-labelledby="donation-title">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="donation-content">
+                        <h2 id="donation-title" class="donation-title">Transforme Vidas <span>Hoje</span></h2>
+                        <p class="donation-description">Sua doação ajuda a manter nossos projetos e a expandir nosso impacto, alcançando mais jovens em situação de vulnerabilidade.</p>
+                        <div class="donation-impact">
+                            "Cada R$1 investido no projeto representa R$4 economizados em políticas públicas de segurança e saúde, segundo estudo da Universidade Federal."
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="donation-form">
+                        <div class="donation-options d-flex flex-wrap gap-3 mb-4">
+                            <button class="donation-option active flex-grow-1">
+                                <div class="donation-option-amount">R$25</div>
+                                <div class="donation-option-impact">1 uniforme</div>
+                            </button>
+                            <button class="donation-option flex-grow-1">
+                                <div class="donation-option-amount">R$50</div>
+                                <div class="donation-option-impact">Material esportivo</div>
+                            </button>
+                            <button class="donation-option flex-grow-1">
+                                <div class="donation-option-amount">R$100</div>
+                                <div class="donation-option-impact">1 mês de treinos</div>
+                            </button>
+                        </div>
+                        
+                        <div class="donation-custom mb-4">
+                            <input type="text" class="form-control" placeholder="Outro valor (R$)" aria-label="Digite um valor personalizado para doação">
+                        </div>
+                        
+                        <div class="donation-recurring d-flex align-items-center mb-4">
+                            <label class="donation-recurring-label d-flex align-items-center">
+                                <input type="checkbox" class="me-2">
+                                Tornar minha doação mensal
+                                <span class="donation-recurring-badge">+30% de impacto</span>
+                            </label>
+                        </div>
+                        
+                        <button class="donation-submit btn w-100 py-3">Doar Agora</button>
+                        
+                        <div class="donation-pix mt-4 text-center">
+                            <div class="donation-pix-title mb-3">Doe via PIX</div>
+                            <div class="donation-qrcode mx-auto">
+                                <img src="https://via.placeholder.com/130x130/FFFFFF/000000?text=QR+CODE+PIX" alt="QR Code PIX">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter Section -->
+    <section class="newsletter" aria-labelledby="newsletter-title">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="newsletter-content">
+                        <h3 id="newsletter-title" class="newsletter-title">Fique por Dentro</h3>
+                        <p class="newsletter-description">Receba novidades sobre nossos projetos, eventos e histórias de impacto diretamente no seu e-mail.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <form class="newsletter-form" aria-label="Formulário de inscrição na newsletter">
+                        <div class="newsletter-input d-flex mb-3">
+                            <input type="email" class="form-control rounded-0 rounded-start" placeholder="Seu melhor e-mail" aria-label="Digite seu e-mail" required>
+                            <button type="submit" class="btn rounded-0 rounded-end px-4">Inscrever</button>
+                        </div>
+                        
+                        <div class="newsletter-options d-flex gap-4 mb-3">
+                            <label class="newsletter-option d-flex align-items-center">
+                                <input type="radio" name="frequency" class="me-2" checked>
+                                Quinzenal
+                            </label>
+                            <label class="newsletter-option d-flex align-items-center">
+                                <input type="radio" name="frequency" class="me-2">
+                                Mensal
+                            </label>
+                        </div>
+                        
+                        <div class="newsletter-privacy">
+                            Ao se inscrever, você concorda com nossa Política de Privacidade e com o recebimento de e-mails informativos, conforme a LGPD.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-top row g-5 mb-5">
+                <div class="col-lg-3 col-md-6">
+                    <a href="#" class="footer-logo d-block mb-3">
+                        <img src="https://via.placeholder.com/150x50/FF5500/FFFFFF?text=FSD" alt="Futsal sem Drogas">
+                    </a>
+                    <p class="footer-about mb-4">
+                        O Futsal sem Drogas é uma organização sem fins lucrativos que utiliza o esporte como ferramenta de transformação social e prevenção ao uso de drogas.
+                    </p>
+                    <div class="footer-social d-flex gap-3">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-heading mb-4">Contato</h4>
+                    <div class="footer-contact-item d-flex mb-3">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="footer-contact-text">
+                            Rua Exemplo, 123<br>
+                            Bairro, Cidade - Estado<br>
+                            CEP: 00000-000
+                        </div>
+                    </div>
+                    <div class="footer-contact-item d-flex mb-3">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="footer-contact-text">
+                            (11) 99999-9999<br>
+                            (11) 2222-2222
+                        </div>
+                    </div>
+                    <div class="footer-contact-item d-flex">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </div>
+                        <div class="footer-contact-text">
+                            contato@futsalsemdrogas.org<br>
+                            parcerias@futsalsemdrogas.org
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-heading mb-4">Links Rápidos</h4>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="#"><i class="fas fa-chevron-right me-2" aria-hidden="true"></i> Início</a></li>
+                        <li class="mb-2"><a href="#about"><i class="fas fa-chevron-right me-2" aria-hidden="true"></i> Sobre Nós</a></li>
+                        <li class="mb-2"><a href="#projects"><i class="fas fa-chevron-right me-2" aria-hidden="true"></i> Nossos Projetos</a></li>
+                        <li class="mb-2"><a href="#news"><i class="fas fa-chevron-right me-2" aria-hidden="true"></i> Notícias</a></li>
+                        <li class="mb-2"><a href="#help"><i class="fas fa-chevron-right me-2" aria-hidden="true"></i> Como Ajudar</a></li>
+                        <li class="mb-2"><a href="#contact"><i class="fas fa-chevron-right me-2" aria-hidden="true"></i> Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-heading mb-4">Certificações</h4>
+                    <div class="footer-certificates d-flex flex-wrap gap-3 mb-4">
+                        <img src="https://via.placeholder.com/80x50/CCCCCC/666666?text=CERT+1" alt="Certificação 1" class="footer-certificate">
+                        <img src="https://via.placeholder.com/80x50/CCCCCC/666666?text=CERT+2" alt="Certificação 2" class="footer-certificate">
+                        <img src="https://via.placeholder.com/80x50/CCCCCC/666666?text=CERT+3" alt="Certificação 3" class="footer-certificate">
+                    </div>
+                    <h4 class="footer-heading mb-4">Transparência</h4>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="#"><i class="fas fa-file-alt me-2" aria-hidden="true"></i> Estatuto Social</a></li>
+                        <li class="mb-2"><a href="#"><i class="fas fa-file-alt me-2" aria-hidden="true"></i> Relatório Anual 2022</a></li>
+                        <li class="mb-2"><a href="#"><i class="fas fa-file-alt me-2" aria-hidden="true"></i> Prestação de Contas</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom row align-items-center">
+                <div class="col-md-8">
+                    <div class="footer-copyright">
+                        &copy; 2023 Futsal sem Drogas. Todos os direitos reservados. CNPJ: 00.000.000/0001-00<br>
+                        Desenvolvido por <a href="#">Sua Agência</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-legal d-flex justify-content-md-end gap-4 mt-3 mt-md-0">
+                        <a href="#">Política de Privacidade</a>
+                        <a href="#">Termos de Uso</a>
+                        <a href="#">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating Elements -->
+    <div class="floating-buttons d-flex flex-column gap-3">
+        <a href="https://wa.me/5511999999999" class="floating-button floating-whatsapp" aria-label="Entre em contato via WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#donation" class="floating-button floating-donate" aria-label="Faça uma doação">
+            <i class="fas fa-heart"></i>
+        </a>
+    </div>
+    
+    <div class="donation-counter">
+        <i class="fas fa-heart"></i>
+        <span>12 pessoas doaram hoje</span>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript -->
+    <script>
+        // Donation options
+        const donationOptions = document.querySelectorAll('.donation-option');
+        
+        donationOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove active class from all options
+                donationOptions.forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                
+                // Add active class to clicked option
+                option.classList.add('active');
+            });
+        });
+        
+        // Video play button
+        const videoPlay = document.querySelector('.video-play');
+        
+        videoPlay.addEventListener('click', () => {
+            alert('Vídeo institucional seria reproduzido aqui.');
+        });
+        
+        // Donation counter animation
+        const donationCounter = document.querySelector('.donation-counter span');
+        let count = 12;
+        
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                count++;
+                donationCounter.textContent = `${count} pessoas doaram hoje`;
+                donationCounter.style.animation = 'none';
+                setTimeout(() => {
+                    donationCounter.style.animation = 'pulse 2s infinite';
+                }, 10);
+            }
+        }, 30000);
+        
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Obrigado por se inscrever em nossa newsletter!');
+            newsletterForm.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Help section interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Help cards interaction
+            const helpCards = document.querySelectorAll('.help-card');
+            
+            helpCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Don't trigger if clicking the button directly
+                    if (!e.target.closest('.help-btn')) {
+                        const button = this.querySelector('.help-btn');
+                        if (button) {
+                            button.click();
+                        }
+                    }
+                });
+                
+                // Keyboard navigation
+                card.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const button = this.querySelector('.help-btn');
+                        if (button) {
+                            button.click();
+                        }
+                    }
+                });
+            });
+            
+            // Make help cards focusable
+            helpCards.forEach(card => {
+                card.setAttribute('tabindex', '0');
+            });
+        });
+    </script>
+</body>
+</html>
